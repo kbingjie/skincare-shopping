@@ -1,0 +1,1 @@
+This small project is used to pratice Vuex and Vue.js
