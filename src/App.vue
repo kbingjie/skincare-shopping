@@ -26,4 +26,12 @@ body{
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+    overflow: hidden;
+    height: 100%;
+}
+body {
+    height: 100%;
+    overflow: auto;
+}
 </style>

@@ -19,12 +19,28 @@ Vue.use(VueRouter)
   {
     path: '/main',
     name: 'Main',
-    component: () => import('../views/Main.vue')
+    component: () => import('../views/Main.vue'),
+    beforeEnter:(to, from ,next) => {
+      let user = window.localStorage.getItem('username');
+      if(user) {
+        next()
+      } else {
+        next({name: 'Login'})
+      }
+    }
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue')
+    component: () => import('../views/Login.vue'),
+    beforeEnter:(to, from, next) => {
+      let user = window.localStorage.getItem('username');
+      if(user){
+        window.alert('You already loggedin')
+      } else {
+        next()
+      }
+    }
   },
   {
     path: '/product/:id',

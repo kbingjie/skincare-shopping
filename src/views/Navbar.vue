@@ -1,6 +1,6 @@
 <template>
     <header id="navbar">
-        <div v-if="show()">
+        <div >
             <ul>
                 <li><router-link :to="{name: 'Main'}" class="main link">Online Shopping</router-link></li>
                 <li class="right"><a class="link" 
@@ -21,20 +21,21 @@ import { mapGetters } from 'vuex';
 export default {
     name: "Navbar",
     data(){
-        return{}
+        return{
+            status: window.localStorage.getItem("isLoggedin"),
+            show:false
+        }
     },
     computed:{
         ...mapGetters(['cartList'])
     },
+    created(){
+
+    },
+    watch:{
+
+    },
     methods: {
-        show(){
-            const status = window.localStorage.getItem('isLoggedin')
-            if(status === 'yes'){
-                return true
-            } else {
-                return false;
-            }
-        },
         getUsername(){
            const username = window.localStorage.getItem('username');
            return username;
@@ -42,7 +43,6 @@ export default {
         logOut(){
             window.localStorage.clear();
             console.log('cleared!!')
-            console.log(this.show())
             this.$router.push({ name: 'Login'})
         }
 

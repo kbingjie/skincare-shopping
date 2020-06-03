@@ -23,13 +23,11 @@
                 <input type="text" v-model="username"><br>
                 <label for="">Password:</label>
                 <input type="password" v-model="password"><br>
-                <label for="">Confirm Password:</label>
+                <label for="">Password:</label>
                 <input type="password" v-model="confirmedPassword"><br>
                 <small v-if="feedback">{{feedback}}</small>
                 <input class="button" type="button" value="Submit"
                 @click.prevent="register">
-                <input class="button" type="button" value="Already a Member"
-                >
             </form>
         </template>
     </div>
@@ -51,14 +49,18 @@ export default {
     methods: {
         ...mapMutations(['setLoginStatus', 'getUser']),
         register(){
-            if(this.password === this.confirmedPassword){
-                window.localStorage.setItem('username', this.username);
-                window.localStorage.setItem('password', this.password);
-                window.localStorage.setItem('isLoggedin', 'yes');
-                this.$router.push({ name: 'Main'});             
+            if(this.username && this.password){
+                if(this.password === this.confirmedPassword){
+                    window.localStorage.setItem('username', this.username);
+                    window.localStorage.setItem('password', this.password);
+                    window.localStorage.setItem('isLoggedin', 'yes');
+                    this.$router.push({ name: 'Main'});             
+                } else {
+                    this.feedback = "Please confirm your password:)"
+                }
             } else {
-                this.feedback = "Something wrong with your input"
-            }
+                this.feedback = "Please register first"
+                }
         }
     },
     computed:{
