@@ -17,7 +17,7 @@
             <div class="cart-content-main" 
             v-for="(item,index) in cartList" :key="index">
                 <div class="cart-info">
-                    <img src="../images/airPods.jpg" alt="">
+                    <img :src="productDict[item.id].image">
                     <span>{{ productDict[item.id].name }}</span>
                 </div>
                 <div class="cart-price">
@@ -120,13 +120,17 @@ export default {
     }
 }
 
-.cart-price{
-    margin-left: 40%;
-}
 .cart-info {
-    width: 100px;
+    // width: 100px;
+    display: flex;
+    width: 30%;
     img{
-        width: 50%;
+        display: inline-block;
+        width: 20%;
+    }
+    span{
+        display: inline-block;
+        width: 200px;
     }
 }
 
