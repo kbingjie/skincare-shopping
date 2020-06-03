@@ -1,3 +1,6 @@
+June 3, 2020 
+1. 修复图片无法显示BUG
+
 May 28, 2020 
 1. 完成cart页面 - 增减商品, checkout
 2. 完成main page 逻辑

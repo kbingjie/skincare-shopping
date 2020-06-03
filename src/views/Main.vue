@@ -37,13 +37,16 @@
 
         <!-- show products -->
         <div class="products">
-            <div v-for="product in filters" :key="product.id" 
-            @click="productPage(product.id)" class="product">       
+            <div v-for="product in filters" :key="product.id" class="product">       
                 <img :src="product.image">
-                <div class="name">{{ product.name | snippet }}</div>
-                <span>{{ product.color }}</span><br>
-                <small>{{ product.sales }}</small><br>
+                <div class="name"
+                @click="productPage(product.id)" >
+                    {{ product.name | snippet }}
+                </div>
+                <small>{{ product.color }}</small><br>
+                <small>sales: {{ product.sales }}</small><br>
                 <span>${{ product.cost}}</span>
+                <a @click="addCart(product.id)" class="add-cart">Add to Cart</a>
             </div>
         </div>
         <Product />
@@ -52,7 +55,7 @@
 
 <script>
 import Product from '../views/Product.vue'
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions, mapMutations } from 'vuex'
 
 export default {
     name: "Main",
@@ -68,6 +71,7 @@ export default {
     },
     methods: {
         ...mapActions(['fetchProducts']),
+        ...mapMutations(['addCart']),
         //click event bringing to single product page
         productPage(id){
             console.log('I wanna go to this product page');
@@ -153,13 +157,39 @@ export default {
     grid-gap: 20px;
     padding: 16px;
     .product{
+        position: relative;
         border: 1px solid #e9eaec;
         border-radius: 10px;
-        background: #fff;
-        cursor: pointer;    
+        background: #fff;   
         height: 300px;
         text-align: center;
         box-shadow: 0 1px 1px rgba(0,0,0,.2);
+        user-select: none;
+        padding-bottom: 10px;
+    }
+    .add-cart{
+        position: absolute;
+        display: none;
+        z-index: 1;
+        top: -20px;
+        right: 0;
+        color: white;
+        background-color: #2d8cf0;
+        border-radius: 5px;
+        width: 100px;
+        padding: 10px;
+        margin-top: 20px;
+        cursor: pointer;         
+    }
+    .product:hover .add-cart{
+        display: block;
+    }
+    .add-cart:hover{
+        background-color: #2166af;
+    }
+    .name:hover {
+        color: red;
+        cursor: pointer;
     }
 }
 

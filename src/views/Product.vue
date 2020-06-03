@@ -2,7 +2,7 @@
     <div id="product" v-if="product">
         <div class="product-head box">
             <div class="product-image">
-                <img src="../images/airPods.jpg" alt="">
+                <img :src="product.image" alt="">
             </div>
             <div class="product-info">
                 <h1>{{ product.name }}</h1>
@@ -14,7 +14,7 @@
 
         <div class="product-desc box">
             <h2>Product Description</h2>
-            <img src="../images/airPods_detail.jpg" alt="">
+            <img :src="product.imageDetail" alt="">
         </div>
     </div>
 </template>

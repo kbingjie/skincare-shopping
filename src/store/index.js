@@ -9,13 +9,10 @@ export default new Vuex.Store({
     //product list info
     productList:[],
     //cart list, object in array
-    cartList:[],
-    //acount info
-    username: window.localStorage.getItem('username'),
-    //auth status
-    loginStatus: !!window.localStorage.getItem('loginStatus')
+    cartList:[]
   },
   getters: {
+    username: state => state.username,
     productList: state => state.productList,
     cartList: state => state.cartList,
     // set productList as object, so it's easier to look for data
@@ -49,8 +46,6 @@ export default new Vuex.Store({
       commit('emptyCart');
       alert('Thanks for shopping with us!')
     }
-
-
 
   },
   mutations: {

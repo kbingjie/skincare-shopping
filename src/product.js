@@ -3,7 +3,7 @@ export default [
         id: 1,
         name: 'AirPods',
         brand: 'Apple',
-        image: '../static/test.jpg',
+        image: '../images/airPods.jpg',
         imageDetail: '../images/airPods_detail.jpg',
         sales: 85,
         cost: 149,

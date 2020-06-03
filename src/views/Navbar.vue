@@ -1,20 +1,53 @@
 <template>
     <header id="navbar">
-        <ul>
-            <li><router-link :to="{name: 'Main'}" class="main link">Online Shopping</router-link></li>
-            <li class="right"><a class="link">Logout</a></li>
-            <li>My name</li>
-            <li><router-link :to="{name: 'Cart'}" class="link">Cart</router-link></li>
-        </ul>
+        <div v-if="show()">
+            <ul>
+                <li><router-link :to="{name: 'Main'}" class="main link">Online Shopping</router-link></li>
+                <li class="right"><a class="link" 
+                @click.prevent="logOut">Logout</a></li>
+                <li>{{getUsername()}} </li>
+                <li><router-link :to="{name: 'Cart'}" class="link">
+                    Cart
+                    <span v-if="cartList.length">{{cartList.length}}</span>
+                    </router-link></li>
+            </ul>
+        </div>
     </header>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     name: "Navbar",
     data(){
         return{}
+    },
+    computed:{
+        ...mapGetters(['cartList'])
+    },
+    methods: {
+        show(){
+            const status = window.localStorage.getItem('isLoggedin')
+            if(status === 'yes'){
+                return true
+            } else {
+                return false;
+            }
+        },
+        getUsername(){
+           const username = window.localStorage.getItem('username');
+           return username;
+        },
+        logOut(){
+            window.localStorage.clear();
+            console.log('cleared!!')
+            console.log(this.show())
+            this.$router.push({ name: 'Login'})
+        }
+
     }
+
 }
 </script>
 
@@ -47,6 +80,14 @@ export default {
     }
     .right{
         margin-left: auto;
+    }
+    span {
+        background: red;
+        border-radius: 10%;
+        width: 100px;
+        height: 50px;
+        font-size: 0.8em;
+
     }
 }
 

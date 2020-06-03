@@ -15,5 +15,9 @@ new Vue({
 //filters
 
 Vue.filter('snippet', value => {
-  return value.slice(0,20) + '...'
+  if(value.length > 20) {
+    return value.slice(0,20) + '...'
+  } else {
+    return value
+  }
 })
