@@ -1,29 +1,29 @@
 <template>
-  <div id="app">
-    <Navbar />
+    <div id="app">
+        <Navbar />
 
-    <!-- get all routers -->
-    <router-view/>
-  </div>
+        <!-- get all routers -->
+        <router-view />
+    </div>
 </template>
 
 
 <script>
-import Navbar from '@/views/Navbar.vue'
+import Navbar from "@/views/Navbar.vue";
 
 export default {
-  name: "App",
-  components: {
-    Navbar
-  }
-}
+    name: "App",
+    components: {
+        Navbar,
+    },
+};
 </script>
 <style lang="scss">
-body{
-  margin: 0;
-  padding: 0;
-  background-color: rgb(223, 219, 219);
-  font-family: Arial, Helvetica, sans-serif;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(250, 235, 235);
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
 
 html {

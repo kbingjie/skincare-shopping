@@ -1,102 +1,112 @@
 export default [
     {
         id: 1,
-        name: 'AirPods',
-        brand: 'Apple',
-        image: '../images/airPods.jpg',
-        imageDetail: '../images/airPods_detail.jpg',
+        name: 'Intensive Moisture Cream',
+        brand: 'Curel',
+        image: '../images/CU_cream.jpg',
+        imageDetail: '../images/CU_cream_detail.jpg',
         sales: 85,
-        cost: 149,
-        color: 'White'
+        cost: 25,
+        category: 'Cream',
+        desDetail: "Dry, sensitive skin lacks ceramides - natural lipids that form the skin's protective barrier. Curél was designed to replenish, protect and promote skin's natural ceramides in skin. The Curél Intensive Moisture Facial Cream is a lightweight, yet intensive moisturizer that deeply hydrates and nourishes your skin. This moisturizer absorbs instantly and leaves the skin with a healthy glow. It also helps restore skin's ceramides to improve the natural barrier function and help protect skin from dryness and external stimuli."
     },
     {
         id: 2,
-        name: 'BeatsX 入耳式耳机',
-        brand: 'Beats',
-        image: '../images/BeatsX_1.jpg',
-        imageDetail: '../images/BeatsX_1_detail.jpg',
+        name: 'Estee Lauder Advanced Night Repair Eye',
+        brand: 'Estee Lauder',
+        image: '../images/ES_eyecream.jpg',
+        imageDetail: '../images/ES_eyecream_detail.jpg',
         sales: 99,
-        cost: 119,
-        color: 'White'
+        cost: 59,
+        category: 'Eye Cream',
+        desDetail: "This supercharged treatment—now with 10X Concentrated Repair Technology—helps repair the visible impact of lack of sleep, UV, pollution, even blue light. It's proven to reveal a bright, hydrated, visibly revived look with comprehensive benefits for the eye area."
     },
     {
         id: 3,
-        name: 'Beats Solo3 Wireless 头戴式式耳机',
-        brand: 'Beats',
-        image: '../images/BeatsX_2.jpg',
-        imageDetail: '../images/BeatsX_2_detail.jpg',
+        name: 'Estee Lauder Advanced Night Repair ',
+        brand: 'Estee Lauder',
+        image: '../images/ES_serum.jpg',
+        imageDetail: '../images/ES_serum_detail.jpg',
         sales: 50,
-        cost: 299,
-        color: 'Gold'
+        cost: 59,
+        category: 'Serum',
+        desDetail: "Now with Chronolux™ Power Signal Technology, this deep- and fast-penetrating serum reduces the look of multiple signs of aging caused by the environmental assaults of modern life. Skin looks smoother and less lined, younger, more radiant and even toned."
     },
     {
         id: 4,
-        name: 'Beats Pill+ 便携式扬声器',
-        brand: 'Beats',
-        image: '../images/BeatsX_3.jpg',
-        imageDetail: '../images/BeatsX_3_detail.jpg',
+        name: 'Estee Lauder Revitalizing Supreme+ Facial Cream',
+        brand: 'Estee Lauder',
+        image: '../images/ES_cream.jpg',
+        imageDetail: '../images/ES_cream_detail.jpg',
         sales: 3000,
-        cost: 249,
-        color: 'Red'
+        cost: 32,
+        category: 'Cream',
+        desDetail: "Now with Chronolux™ Power Signal Technology, this deep- and fast-penetrating serum reduces the look of multiple signs of aging caused by the environmental assaults of modern life. Skin looks smoother and less lined, younger, more radiant and even toned."
     },
     {
         id: 5,
-        name: 'Sonos PLAY:1 无线扬声器',
-        brand: 'Sonos',
-        image: '../images/sonos.jpg',
-        imageDetail: '../images/sonos_detail.jpg',
+        name: 'Fresh Soy Face Cleanser',
+        brand: 'Fresh',
+        image: '../images/FS_cleanser.jpg',
+        imageDetail: '../images/FS_cleanser_detail.jpg',
         sales: 800,
-        cost: 300,
-        color: 'White'
+        cost: 15,
+        category: 'Cleanser',
+        desDetail: "Now with Chronolux™ Power Signal Technology, this deep- and fast-penetrating serum reduces the look of multiple signs of aging caused by the environmental assaults of modern life. Skin looks smoother and less lined, younger, more radiant and even toned."
     },
     {
         id: 6,
-        name: 'Powerbeats3 by Dr. Dre Wireless 入耳式耳机',
-        brand: 'Beats',
-        image: '../images/PowersBeatsX.png',
-        imageDetail: '../images/PowerBeatsX_detail.jpg',
+        name: 'Fresh Deep Hydration Face Cream',
+        brand: 'Fresh',
+        image: '../images/FS_cream.jpg',
+        imageDetail: '../images/FS_cream_detail.jpg',
         sales: 60,
-        cost: 99,
-        color: 'Gold'
+        cost: 42,
+        category: 'Cream',
+        desDetail: "Now with Chronolux™ Power Signal Technology, this deep- and fast-penetrating serum reduces the look of multiple signs of aging caused by the environmental assaults of modern life. Skin looks smoother and less lined, younger, more radiant and even toned."
     },
     {
         id: 7,
-        name: 'Beats EP 头戴式耳机',
-        brand: 'Beats',
-        image: '../images/BeatsX_4.jpg',
-        imageDetail: '../images/BeatsX_4_detail.jpg',
+        name: 'Fresh Antioxidant Glow Water',
+        brand: 'Fresh',
+        image: '../images/FS_toner.jpg',
+        imageDetail: '../images/FS_toner_detail.jpg',
         sales: 140,
-        cost: 50,
-        color: 'Blue'
+        cost: 12,
+        category: 'Toner',
+        desDetail: "Spritz on this ultra-fine, alcohol-free citrus mist as a cooling primer, makeup-setting spray, or hydrating skin refresh. Enriched with fresh’s vitamin fruit complex of vitamins C, E, and B5; lemon and orange extracts; and minerals, it protects against free radicals and gives a boost of skin nutrition."
     },
     {
         id: 8,
-        name: 'B&O PLAY BeoPlay A1 便携式蓝牙扬声器',
-        brand: 'B&O',
-        image: '../images/bo_1.jpg',
-        imageDetail: '../images/bo_1_detail.jpg',
+        name: 'Kiehls Ultra Facial Cream',
+        brand: "Kiehls",
+        image: '../images/KS_cream.jpg',
+        imageDetail: '../images/KS_cream_detail.jpg',
         sales: 150,
-        cost: 315,
-        color: 'Gold'
+        cost: 18,
+        category: 'Cream',
+        desDetail: "Our #1 facial cream has a unique lightweight texture and lasting 24-hour hydration to leave skin softer, smoother and visibly healthier. Formulated with Glacial Glycoprotein and olive-derived Squalane, this non-greasy, lightweight moisturizer immediately leaves skin 2.3X more hydrated, even in skin’s driest areas."
     },
     {
         id: 9,
-        name: 'Bose® QuietComfort® 35 无线耳机',
-        brand: 'Bose',
-        image: '../images/bose.jpg',
-        imageDetail: '../images/bose_detail.jpg',
+        name: 'Kiehls Rare Earth Deep Pore Cleansing Masque',
+        brand: 'Kiehls',
+        image: '../images/KS_mask.jpg',
+        imageDetail: '../images/KS_mask_detail.jpg',
         sales: 170,
-        cost: 400,
-        color: 'Blue'
+        cost: 30,
+        category: 'Mask',
+        desDetail: "Our #1 facial cream has a unique lightweight texture and lasting 24-hour hydration to leave skin softer, smoother and visibly healthier. Formulated with Glacial Glycoprotein and olive-derived Squalane, this non-greasy, lightweight moisturizer immediately leaves skin 2.3X more hydrated, even in skin’s driest areas."
     },
     {
         id: 10,
-        name: 'B&O PLAY Beoplay H4 无线头戴式耳机',
-        brand: 'B&O',
-        image: '../images/bo_2.jpg',
-        imageDetail: '../images/bo_2_detail.jpg',
+        name: 'Kiehls Clearly Corrective Dark Spot Solution',
+        brand: 'Kiehls',
+        image: '../images/KS_serum.jpg',
+        imageDetail: '../images/KS_serum_detail.jpg',
         sales: 93,
-        cost: 309,
-        color: 'Gold'
+        cost: 128,
+        category: 'Serum',
+        desDetail: "Our #1 facial cream has a unique lightweight texture and lasting 24-hour hydration to leave skin softer, smoother and visibly healthier. Formulated with Glacial Glycoprotein and olive-derived Squalane, this non-greasy, lightweight moisturizer immediately leaves skin 2.3X more hydrated, even in skin’s driest areas."
     }
 ]

@@ -9,92 +9,89 @@
                 <div class="cart-count">Quantity</div>
                 <div class="cart-amount">Amount</div>
                 <div class="cart-delete">Delete</div>
-        </div>
-
-        <!-- cart content part 2 -->
-        <div class="cart-content">
-            <!-- list all items in the cart -->
-            <div class="cart-content-main" 
-            v-for="(item,index) in cartList" :key="index">
-                <div class="cart-info">
-                    <img :src="productDict[item.id].image">
-                    <span>{{ productDict[item.id].name }}</span>
-                </div>
-                <div class="cart-price">
-                    ${{ productDict[item.id].cost }}
-                </div>
-                <div class="cart-count">
-                    <span class="cart-control-minus"
-                    @click.prevent="editCart({id:item.id, count:-1})">-</span>
-                    {{ item.count}}
-                    <span class="cart-control-add"
-                    @click.prevent="editCart({id:item.id, count:+1})">+</span>
-                </div>
-                <div class="cart-amount">
-                    ${{ productDict[item.id].cost *item.count}}
-                </div>
-                <div class="cart-delete">
-                    <span @click="deleteCart(item.id)" class="cart-control-delete">Delete</span>
-                </div>
             </div>
 
-            <!-- when cart is empty -->
-            <div v-if="!cartList.length" class="cart-empty">Your Shopping Cart is Empty</div>
-        </div>
+            <!-- cart content part 2 -->
+            <div class="cart-content">
+                <!-- list all items in the cart -->
+                <div class="cart-content-main" v-for="(item,index) in cartList" :key="index">
+                    <div class="cart-info">
+                        <img :src="productDict[item.id].image" />
+                        <span>{{ productDict[item.id].name }}</span>
+                    </div>
+                    <div class="cart-price">${{ productDict[item.id].cost }}</div>
+                    <div class="cart-count">
+                        <span
+                            class="cart-control-minus"
+                            @click.prevent="editCart({id:item.id, count:-1})"
+                        >-</span>
+                        {{ item.count}}
+                        <span
+                            class="cart-control-add"
+                            @click.prevent="editCart({id:item.id, count:+1})"
+                        >+</span>
+                    </div>
+                    <div class="cart-amount">${{ productDict[item.id].cost *item.count}}</div>
+                    <div class="cart-delete">
+                        <span @click="deleteCart(item.id)" class="cart-control-delete">Delete</span>
+                    </div>
+                </div>
 
-        <!-- end of the cart -->
-        <div v-if="cartList.length" class="cart-footer">
-            <div class="cart-footer-total">
-                Count<span>{{ countAll }}</span>
-            </div>
-            <div class="cart-footer-total">
-                Total<span>${{ priceAll }}</span>
-            </div>
-            <div class="cart-footer-order"
-            @click.prevent="handleCheckout">
-                <span>Check Out</span>
+                <!-- when cart is empty -->
+                <div v-if="!cartList.length" class="cart-empty">Your Shopping Cart is Empty</div>
             </div>
 
-        </div>
+            <!-- end of the cart -->
+            <div v-if="cartList.length" class="cart-footer">
+                <div class="cart-footer-total">
+                    Count
+                    <span>{{ countAll }}</span>
+                </div>
+                <div class="cart-footer-total">
+                    Total
+                    <span>${{ priceAll }}</span>
+                </div>
+                <div class="cart-footer-order" @click.prevent="handleCheckout">
+                    <span>Check Out</span>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-import { mapGetters, mapMutations, mapActions} from 'vuex';
+import { mapGetters, mapMutations, mapActions } from "vuex";
 
 export default {
     name: "Cart",
-    data(){
-        return{
-        }
+    data() {
+        return {};
     },
-    methods:{
-        ...mapMutations([ 'deleteCart', 'editCart' ]),
-        ...mapActions(['checkOut']),
-        handleCheckout(){
+    methods: {
+        ...mapMutations(["deleteCart", "editCart"]),
+        ...mapActions(["checkOut"]),
+        handleCheckout() {
             this.checkOut();
-        }
+        },
     },
     computed: {
-        ...mapGetters(['cartList', 'productDict']),
-        countAll: function(){
+        ...mapGetters(["cartList", "productDict"]),
+        countAll: function () {
             let count = 0;
-            this.cartList.forEach(item => {
+            this.cartList.forEach((item) => {
                 count += item.count;
             });
             return count;
         },
-        priceAll(){
+        priceAll() {
             let total = 0;
-            this.cartList.forEach(item => {
+            this.cartList.forEach((item) => {
                 total += this.productDict[item.id].cost * item.count;
             });
-            return total
-        }
-
-    }    
-}
+            return total;
+        },
+    },
+};
 </script>
 
 <style lang="scss">
@@ -106,17 +103,16 @@ export default {
     padding-bottom: 20px;
 }
 
-.cart-head{
-    .cart-head-title{
+.cart-head {
+    .cart-head-title {
         font-size: 1.2em;
         padding: 20px 30px;
     }
-    .cart-head-main{
+    .cart-head-main {
         display: flex;
         justify-content: space-between;
         background: lightgray;
         padding: 10px 30px;
-
     }
 }
 
@@ -124,19 +120,20 @@ export default {
     // width: 100px;
     display: flex;
     width: 30%;
-    img{
+    img {
         display: inline-block;
         width: 20%;
+        border-radius: 5px;
     }
-    span{
+    span {
         display: inline-block;
         width: 200px;
+        padding-left: 20px;
     }
 }
 
-.cart-content{
-   // display: flex;
-    .cart-content-main{
+.cart-content {
+    .cart-content-main {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -144,16 +141,16 @@ export default {
         border-bottom: 1px dashed #dddee1;
     }
     .cart-delete {
-        background: #2d8cf0;
+        background: hotpink;
         color: #fff;
         border-radius: 3px;
-        padding: 5px;
+        padding: 5px 10px;
         cursor: pointer;
     }
 }
 
 .cart-control-minus,
-.cart-control-add{
+.cart-control-add {
     display: inline-block;
     margin: 0 4px;
     width: 24px;
@@ -162,7 +159,7 @@ export default {
     text-align: center;
     background: #f8f8f9;
     border-radius: 50%;
-    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 .cart-promotion {
@@ -174,28 +171,30 @@ export default {
     }
 }
 
-.cart-footer-order{
-    background: #2d8cf0;
+.cart-footer-order {
+    background: hotpink;
     color: #fff !important;
     border-radius: 3px;
-    padding: 5px;
+    padding: 5px 10px;
     cursor: pointer;
 }
 .cart-delete:hover,
-.cart-footer-order:hover{
-    background-color: #2166af;
-
+.cart-footer-order:hover {
+    background-color: rgb(139, 57, 98);
+    border: none;
 }
+
 .cart-footer {
     display: flex;
     justify-content: flex-end;
     padding: 10px 30px;
     font-size: 1.2em;
-    .cart-footer-total{
+    .cart-footer-total {
         padding: 5px 10px;
-        span{
+        span {
             padding-left: 5px;
-            color: red;
+            color: hotpink;
+            font-weight: bold;
         }
     }
 }

@@ -1,15 +1,19 @@
-June 3, 2020 
-1. 修复图片无法显示BUG
+# Update Log
+[x] August 6, 2020 
+1. Optimized UI
+2. Optimized Images
+3. Update README.md
 
-May 28, 2020 
-1. 完成cart页面 - 增减商品, checkout
-2. 完成main page 逻辑
+[x] June 3, 2020 
+ 1. Fix broken image bug
 
+[x] May 28, 2020 
+1. Finished Cart Page - reduce/increase product, checkout functions
+2. Finished Main page logic
 
-May 29, 2020 
-1. 继续写css
-2. cart页面 - 删除, 总计
+[x] May 29, 2020 
+1. Optimized CSS 
+2. Cart Page - Delete, Sum functions
 
-
-May 26, 2020 
-1. 创建项目,新建html和项目css
+[x] May 26, 2020 
+1. Initialized project

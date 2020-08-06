@@ -1,96 +1,91 @@
 <template>
     <header id="navbar">
-        <div >
+        <div>
             <ul>
-                <li><router-link :to="{name: 'Main'}" class="main link">Online Shopping</router-link></li>
-                <li class="right"><a class="link" 
-                @click.prevent="logOut">Logout</a></li>
-                <li>{{getUsername()}} </li>
-                <li><router-link :to="{name: 'Cart'}" class="link">
-                    Cart
-                    <span v-if="cartList.length">{{cartList.length}}</span>
-                    </router-link></li>
+                <li>
+                    <router-link :to="{name: 'Main'}" class="main link">Skincare Shopping</router-link>
+                </li>
+                <li class="right">
+                    <a class="link" @click.prevent="logOut">Logout</a>
+                </li>
+                <li>{{getUsername()}}</li>
+                <li>
+                    <router-link :to="{name: 'Cart'}" class="link">
+                        Shopping Cart
+                        <span v-if="cartList.length">{{cartList.length}}</span>
+                    </router-link>
+                </li>
             </ul>
         </div>
     </header>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
     name: "Navbar",
-    data(){
-        return{
+    data() {
+        return {
             status: window.localStorage.getItem("isLoggedin"),
-            show:false
-        }
+            show: false,
+        };
     },
-    computed:{
-        ...mapGetters(['cartList'])
+    computed: {
+        ...mapGetters(["cartList"]),
     },
-    created(){
-
-    },
-    watch:{
-
-    },
+    created() {},
+    watch: {},
     methods: {
-        getUsername(){
-           const username = window.localStorage.getItem('username');
-           return username;
+        getUsername() {
+            const username = window.localStorage.getItem("username");
+            return username;
         },
-        logOut(){
+        logOut() {
             window.localStorage.clear();
-            console.log('cleared!!')
-            this.$router.push({ name: 'Login'})
-        }
-
-    }
-
-}
+            console.log("cleared!!");
+            this.$router.push({ name: "Login" });
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
-
 #navbar {
-    background-color: #333;
+    background-color: rgb(126, 69, 97);
     margin: 0;
     padding: 0;
-    
-    ul { 
+
+    ul {
         display: flex;
-        padding:5px 20px;
+        padding: 15px 20px;
         margin: 0;
     }
     li {
         list-style-type: none;
-        color:white;
-        padding:10px;
+        color: white;
+        padding: 10px;
         font-size: 1.2em;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Raleway", Arial, Helvetica, sans-serif;
     }
     .link {
-        color:white;
-        text-decoration: none;   
+        color: white;
+        text-decoration: none;
         cursor: pointer;
     }
-    .link:hover{
-        color: red;
+    .link:hover {
+        color: pink;
     }
-    .right{
+    .right {
         margin-left: auto;
     }
     span {
-        background: red;
+        background: yellowgreen;
         border-radius: 10%;
-        width: 100px;
-        height: 50px;
+        padding: 0 5px;
         font-size: 0.8em;
-
     }
 }
-
 </style>
 
 
