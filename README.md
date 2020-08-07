@@ -4,7 +4,6 @@
 ## Features
 #### Register Page
 - User can visite the main page after registeration (via localStorage)
-- User can add/reduce/delete/checkout product quantity in Shopping Cart page
 
 #### Products List Page
 - It includes product image, title, sold quantity, price
